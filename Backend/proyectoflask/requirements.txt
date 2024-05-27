@@ -1,0 +1,7 @@
+Flask
+firebase-admin
+Pillow
+numpy
+werkzeug
+flask_jwt_extended
+pycuda

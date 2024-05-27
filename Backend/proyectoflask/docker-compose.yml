@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    # image: miappflask  # Comentado porque se usa build. Descomentar si se tira de un registro.
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app  # Asegura que todos los archivos necesarios estén disponibles en el contenedor.
+    environment:
+      - FLASK_APP=app/app.py  # Asegura que Flask sepa cómo iniciar la aplicación.
+      - FLASK_ENV=development
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/proyectoflask-47f4f-firebase-adminsdk-l8uq4-3b36e0d55f.json  # Ubicación de las credenciales de Firebase en el contenedor.
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]  # Configuración para el acceso a GPU.
+

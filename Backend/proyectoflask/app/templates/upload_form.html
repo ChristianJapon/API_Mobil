@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Image Filters</title>
+</head>
+<body>
+    <h1>Upload an Image to Apply Filters</h1>
+    <form action="/api/upload" method="post" enctype="multipart/form-data">
+        <label for="image">Choose an image to upload:</label>
+        <input type="file" id="image" name="image" required><br><br>
+
+        <label for="filter">Select a filter:</label>
+        <select name="filter" id="filter">
+            <option value="sepia">Sepia</option>
+            <option value="anamorphic">Anamorphic Flare</option>
+            <option value="logo">Logo</option>
+        </select><br><br>
+
+        <button type="submit">Apply Filter</button>
+    </form>
+</body>
+</html>
